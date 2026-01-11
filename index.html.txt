@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>写给小狮子的一封光</title>
+  <meta name="description" content="一页简约、可访问的同伴向感谢与喜欢，带有光与云的氛围元素。">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+
+  <!-- 氛围背景：云与柔光（纯装饰） -->
+  <div class="sky" aria-hidden="true">
+    <div class="glow"></div>
+    <div class="cloud c1"></div>
+    <div class="cloud c2"></div>
+    <div class="cloud c3"></div>
+    <div class="sparkles"></div>
+  </div>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <p class="kicker">给 <span class="name">小狮子</span></p>
+      <h1 class="title">谢谢你，把我的路照亮一点</h1>
+
+      <div class="actions" role="group" aria-label="页面操作">
+        <button id="toggleTheme" class="btn" type="button" aria-pressed="false">
+          切换深浅色
+        </button>
+        <button id="copyLetter" class="btn btn-ghost" type="button">
+          复制这封感谢
+        </button>
+      </div>
+
+      <p class="hint" id="status" aria-live="polite"></p>
+    </div>
+  </header>
+
+  <main id="main" class="container" role="main" tabindex="-1">
+    <section class="card" aria-labelledby="letter-title">
+      <h2 id="letter-title" class="section-title">一封写给同伴的光</h2>
+
+      <div class="letter" id="letterText">
+        <p><strong>小狮子</strong>，嘿！先给你一个超级认真（但语气很轻松）的谢谢 🫶</p>
+        <p>谢谢你在风很大的时候还愿意等我；谢谢你在云下面停一停，告诉我“别急，我们慢慢来”。</p>
+        <p>有时候我走路走到发呆，你也不催，就把手伸过来：那一瞬间我真的觉得——哇，路突然就亮了。</p>
+        <p>我对你的喜欢，是同伴向的喜欢：欣赏你、信任你、也很乐意跟你并肩把这些小小的路走成好看的回忆。</p>
+        <p>以后如果你想休息、想发呆、想随便跑跑，我都可以：我们就带着一点光，穿过一点云，吹着一点风，继续走。</p>
+        <p><em>总之：谢谢你，小狮子。你很可靠，也很可爱（我说的）。</em></p>
+      </div>
+
+      <details class="more">
+        <summary>再多说一点</summary>
+        <ul>
+          <li>谢谢你总能把“路”走得很轻松，还顺便把我也带轻松了。</li>
+          <li>谢谢你在我卡壳的时候不吐槽，反而很自然地把手伸过来。</li>
+          <li>谢谢你把陪伴做得很日常：不轰轰烈烈，但每次都很稳。</li>
+        </ul>
+      </details>
+
+      <!-- 小仪式：点亮一句话 -->
+      <div class="ritual" aria-labelledby="ritual-title">
+        <h3 id="ritual-title" class="sr-only">点亮一句话</h3>
+        <button id="lightBtn" class="btn" type="button">点亮一句</button>
+        <p id="lightText" class="ritual-text" aria-live="polite"></p>
+      </div>
+
+      <!-- 小互动：掷一朵云（每日首次固定一句） -->
+      <div class="cloud-toss" aria-labelledby="cloud-title">
+        <h3 id="cloud-title" class="sr-only">掷一朵云</h3>
+
+        <button id="cloudBtn" class="btn btn-ghost" type="button">
+          掷一朵云 ☁️
+        </button>
+
+        <p id="cloudText" class="cloud-text" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="note-title">
+      <h2 id="note-title" class="section-title">小纸条</h2>
+
+      <form class="note" id="noteForm">
+        <label for="msg">你想补充的一句话（只保存在你手机/电脑里）</label>
+        <textarea id="msg" name="msg" rows="4" placeholder="比如：谢谢你今天也在。"></textarea>
+
+        <div class="actions">
+          <button class="btn" type="submit">保存</button>
+          <button class="btn btn-ghost" type="button" id="clearNote">清空</button>
+        </div>
+      </form>
+
+      <p class="saved" id="savedPreview" aria-live="polite"></p>
+    </section>
+
+    <footer class="footer" role="contentinfo">
+      <p class="small">提示：支持键盘操作；若系统设置“减少动态效果”，页面会自动减少动画。</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
